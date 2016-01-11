@@ -5,8 +5,8 @@ python:
 
 matrix:
     include:
-        - env: {TOX_ENV: py27cov, COVERAGE: 1, BLESSED:1}
-        - env: {TOX_ENV: py27, COVERAGE: 0, BLESSED:0}
+        - env: {TOX_ENV: py27cov, COVERAGE: 1, BLESSED: 1}
+        - env: {TOX_ENV: py27, COVERAGE: 0, BLESSED: 0}
 
 before_install:
     - "[ ! -z $COVERAGE ] && travis_retry pip install coveralls || true"
