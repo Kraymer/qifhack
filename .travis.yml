@@ -15,7 +15,7 @@ before_install:
 # test.
 install:
     - travis_retry pip install -r requirements.txt
-    - "[ ! -z $BLESSED ] && travis_retry pip install blessed"
+    - if [[ -z $BLESSED ]]; then travis_retry pip install blessed; fi
     - travis_retry tox -e $TOX_ENV --notest
 
 script: tox -e $TOX_ENV
