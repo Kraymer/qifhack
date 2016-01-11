@@ -4,4 +4,3 @@ mock
 ordereddict
 tox
 pyyaml
-blessed
