@@ -248,16 +248,14 @@ def parse_args(argv):
     dest_group.add_argument('-o', '--output', dest='dest',
         help=('output filename. DEFAULT: edit input file in-place'),
         default='')
-    parser.add_argument("-f", "--force", action="count", default=0,
+    parser.add_argument("-f", "--force", action="count",
         help=("discard transactions categories if not present in "
             "configuration file. Repeat the flag (-ff) to force editing of "
             "all transactions."))
-
     parser.add_argument('-v', '--version', action='version',
                         version='%(prog)s ' + __version__,
                         help='display version information and exit')
     args = vars(parser.parse_args(args=argv[1:]))
-
     if not args['dest']:
         args['dest'] = args['src']
     return args
